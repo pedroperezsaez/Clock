@@ -3,32 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <title>Time</title>
-    <link rel="stylesheet" href="./src/styles.css" />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
+      href="./src/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   </head>
   <body>
     <nav>
       <ul>
-        <li><a href="#clock">Clock</a></li>
-        <li><a href="#alarm">Alarm</a></li>
-        <li><a href="#stopwatch">Stopwatch</a></li>
-        <li><a href="#timer">Timer</a></li>
+        <li>
+          <a
+            href="#clock"
+            class="nav">
+            <span>Clock</span>
+            <span class="material-icons">home</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#alarm"
+            class="nav">
+            <span>Alarm</span>
+            <span class="material-icons">alarm</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#stopwatch"
+            class="nav">
+            <span>Stopwatch</span>
+            <span class="material-icons">timer</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#timer"
+            class="nav">
+            <span>Timer</span>
+            <span class="material-icons">hourglass_bottom</span>
+          </a>
+        </li>
       </ul>
     </nav>
     <main>
       <section id="clock">
         <x-clock>
-          <time>00:00:00</time>
+          <time class="reloj">00:00:00</time>
         </x-clock>
       </section>
       <section id="alarm">
         <x-alarm>
           <template>
             <section class="alarms">
-              <input type="time" min="00:00" max="23:59" step="1" />
+              <input
+                type="time"
+                min="00:00"
+                max="23:59"
+                step="1" />
               <section class="controls">
                 <button class="start material-icons">alarm_on</button>
                 <button class="pause material-icons">alarm_off</button>
@@ -61,14 +97,12 @@
                 type="time"
                 min="00:00:00"
                 max="23:59:59"
-                value="00:03:00"
-              />
+                value="00:03:00" />
               <input
                 type="time"
                 min="00:00:00"
                 max="23:59:59"
-                value="00:01:00"
-              />
+                value="00:01:00" />
             </section>
           </section>
           <section class="controls">
@@ -81,6 +115,8 @@
         </x-timer>
       </section>
     </main>
-    <script type="module" src="./src/app.js"></script>
+    <script
+      type="module"
+      src="./src/app.js"></script>
   </body>
 </html>
