@@ -1,97 +1,115 @@
-:root {
-  --tipografia: 'Roboto';
-}
 body {
   display: flex;
   flex-direction: column;
   margin: 0;
   height: 100vh;
-  background-color: white;
+  background-color: aquamarine;
+
 }
-/*ul{
-  display:  flex;
-  justify-content: space-around;
+
+/*nav > ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  
 }
   */
-nav > ul {
-  display: flex;
-  justify-content: space-around;
-  list-style: none;
-  padding: 0;
-}
 
 nav > ul > li {
-  /* flex: 1 1 auto;*/
+  /*flex: 1 1 auto;*/
   text-align: center;
 }
+ul {
+  display: flex;          
+  justify-content: space-around; 
+  list-style: none;
+  width: calc(100% - 16px);
+  height: 80px;
+  position: fixed;
+  bottom: 0;
+  background-color: blue;
+  border-radius: 50px;
+  
+  padding: 0;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+li{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  width: 112px;
+  background-color: rgb(130, 31, 230);
+  
+  
+}
 
+.contenedor-time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-left: 25vw;
+  margin-right: 25vw;
+}
+
+.texto-icono{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+}
+.botones{
+  display: flex;
+  justify-content: center;
+  align-items: c;
+  height: 40px;
+  width: 112px;
+  border-radius: 20px;
+}
 main {
   display: flex;
+  width: 100%;
+  height: 100%;
 }
+
 main > section:not(:target) {
   display: none;
 }
-li button {
-  background-color: transparent;
-  border: transparent;
+
+.home-reloj-600{
+  display: none;
 }
 
-#clock {
-  font-family: var(--tipografia);
-  font-size: 70pt;
-  margin-top: 40vh;
-  margin-left: auto;
-  margin-right: auto;
-  font-weight: bold;
-  color: #9c92f5;
-}
-nav {
-  position: fixed;
-  bottom: 0%;
-  width: 100%;
-  background-color: #d7d4f56e;
-  padding-bottom: 20px;
-  padding-top: 20px;
-}
-
-nav a {
-  text-decoration: none;
-  color: #551a8b;
-}
-
-.seleccionado {
-  background-color: #93a8f518;
-}
-.nav {
+@media (max-width: 600px){
+  .texto-icono{
   display: flex;
-  font-family: var(--tipografia);
-  font-weight: 400;
-
-  gap: 10px;
+ 
+  justify-content: center;
   align-items: center;
-
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-top:4px;
-  padding-bottom: 4px;
-  border-radius: 40px;
-  background-color: #93a8f549;
+  
 }
-
-@media (max-width: 600px) {
-  .nav {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 0px;
-    padding: 0;
-    background-color: transparent;
-  }
-  .nav button {
-    background-color: aquamarine;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 20px;
-  }
+.botones{
+  width: 64px;
+}
+li{
+display: flex;
+flex-direction: column;
+}
+.home-reloj{
+  display:none;
+}
+.home-reloj-600{
+  display: flex;
+  margin-top: 4px;
+}
+ul{
+  margin-left: 8px;
+  margin-top:12px ;
+  margin-bottom: 16px;
+}
 }
