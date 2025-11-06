@@ -41,7 +41,7 @@ li{
   align-items: center;
   justify-content:center;
   width: 112px;
-  background-color: rgb(130, 31, 230);
+  --background-color: rgb(130, 31, 230);
   
   
 }
