@@ -14,7 +14,13 @@ body {
   --background-color: #D7D4F5;
 
 }
-
+ #clock:target ~ nav a[href="#clock"],
+    #alarm:target ~ nav a[href="#alarm"],
+    #stopwatch:target ~ nav a[href="#stopwatch"],
+    #timer:target ~ nav a[href="#timer"] {
+      background-color: var(--color-boton-seleccionado);
+      color: white;
+    }
 /*nav > ul {
   display: flex;
   flex-wrap: wrap;
@@ -101,6 +107,9 @@ main {
   font-size: medium;
   font-weight:560;
  
+}
+.botones:hover{
+  background-color: var(--color-boton-seleccionado);
 }
 
 
