@@ -1,9 +1,17 @@
+:root{
+  --tipografia:'Roboto';
+  --color-barra-menu:#d7d4f5;
+  --color-boton-seleccionado:#9c92f5;
+  --color-texto-icono:#551a8b;
+  
+
+}
 body {
   display: flex;
   flex-direction: column;
   margin: 0;
   height: 100vh;
-  background-color: aquamarine;
+  --background-color: #D7D4F5;
 
 }
 
@@ -27,7 +35,7 @@ ul {
   height: 80px;
   position: fixed;
   bottom: 0;
-  background-color: blue;
+  background-color: var(--color-barra-menu);
   border-radius: 50px;
   
   padding: 0;
@@ -45,18 +53,35 @@ li{
   
   
 }
-
-.contenedor-time {
+x-clock{
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; 
+  align-items: center; 
+  width: 100%;
+  height: 100%; 
+ background-color: hsl(240, 24%, 96%);
+}
+main {
+  display: flex;
+  
   width: 100%;
   height: 100%;
-  margin-left: 25vw;
-  margin-right: 25vw;
+
+}
+#clock {
+  width: 100%;
+  height: 100%;
+}
+
+.time {
+  font-family: var(--tipografia);
+  font-size: 100pt;
+  color: var(--color-boton-seleccionado);
+  font-weight: 500;
 }
 
 .texto-icono{
+  color:  var(--color-texto-icono);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,16 +91,32 @@ li{
 .botones{
   display: flex;
   justify-content: center;
-  align-items: c;
+ --background-color: var(--color-boton-seleccionado);
+ background-color: transparent;
   height: 40px;
   width: 112px;
   border-radius: 20px;
+  border: none;
+  font-family: var(--tipografia);
+  font-size: medium;
+  font-weight:560;
+ 
 }
-main {
-  display: flex;
-  width: 100%;
-  height: 100%;
+
+
+.boton-seleccionado{
+   display: flex;
+  justify-content: center;
+ background-color: var(--color-boton-seleccionado);
+ --background-color: transparent;
+  height: 40px;
+  width: 112px;
+  border-radius: 20px;
+  border: none;
+  
 }
+
+
 
 main > section:not(:target) {
   display: none;
@@ -106,10 +147,18 @@ flex-direction: column;
 .home-reloj-600{
   display: flex;
   margin-top: 4px;
+   font-family: var(--tipografia);
+  font-size: medium;
+  font-weight:560;
+  color: var(--color-texto-icono);
 }
 ul{
   margin-left: 8px;
   margin-top:12px ;
   margin-bottom: 16px;
+
+}
+.time{
+  font-size: 70pt;
 }
 }
