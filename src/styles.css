@@ -11,16 +11,10 @@ body {
   flex-direction: column;
   margin: 0;
   height: 100vh;
-  --background-color: #D7D4F5;
+ background-color: hsl(240, 24%, 96%);
 
 }
- #clock:target ~ nav a[href="#clock"],
-    #alarm:target ~ nav a[href="#alarm"],
-    #stopwatch:target ~ nav a[href="#stopwatch"],
-    #timer:target ~ nav a[href="#timer"] {
-      background-color: var(--color-boton-seleccionado);
-      color: white;
-    }
+ 
 /*nav > ul {
   display: flex;
   flex-wrap: wrap;
@@ -65,7 +59,7 @@ x-clock{
   align-items: center; 
   width: 100%;
   height: 100%; 
- background-color: hsl(240, 24%, 96%);
+ 
 }
 main {
   display: flex;
