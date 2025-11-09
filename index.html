@@ -68,6 +68,24 @@
     </section>
     <section id="alarm">
       <x-alarm>
+       
+        
+        <section class="controls">
+         <button class="add ">
+  <span class="material-icons-outlined add-icon">
+add
+</span>
+  <span>Añadir alarma</span>
+</button>
+          
+           <section id="clock">
+      <x-clock>
+        <time class="time-alarm">00:00:00</time>
+          
+      </x-clock>
+    </section>
+        </section>
+         <section class="items"></section>
         <template>
           <section class="alarms">
             <input type="time" min="00:00" max="23:59" step="1" />
@@ -78,10 +96,7 @@
             </section>
           </section>
         </template>
-        <section class="items"></section>
-        <section class="controls">
-          <button class="add material-icons">add_alarm</button>
-        </section>
+       
       </x-alarm>
     </section>
     <section id="stopwatch">
