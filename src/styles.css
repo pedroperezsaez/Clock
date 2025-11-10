@@ -168,7 +168,7 @@ x-alarm > .controls{
   
    width: 100%;
   height: auto;
-  background-color: #d80d0d;
+ 
 }
 
 .add{
@@ -228,4 +228,14 @@ ul{
 .time{
   font-size: 70pt;
 }
+}
+
+
+
+.activo{
+
+  color: green;
+}
+.inactivo{
+  color: gray;
 }
