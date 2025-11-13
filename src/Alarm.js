@@ -73,36 +73,33 @@ export default class Alarm extends HTMLElement {
     }
   }
 
-  pause(alarm) {
-     const botonstart = document.querySelector('.start');
-        const botonpause = document.querySelector('.pause');
-    if (this.alarms.includes(alarm)) {
+pause(alarm) {
+  if (this.alarms.includes(alarm)) {
+    const botonstart = alarm.querySelector('.start');
+    const botonpause = alarm.querySelector('.pause');
 
+    botonstart.classList.remove('activo');
+    botonstart.classList.add('inactivo');
 
-     
+    botonpause.classList.remove('inactivo');
+    botonpause.classList.add('activo');
 
-        botonstart.classList.remove('activo');
-        botonstart.classList.add('inactivo');
-      
-        botonpause.classList.remove('inactivo');
-       botonpause.classList.add('activo');
-      alarm.setAttribute("paused", "");
-
-      
-    }
+    alarm.setAttribute("paused", "");
   }
+}
 
-  start(alarm) {
-     const botonstart = document.querySelector('.start');
-        const botonpause = document.querySelector('.pause');
-    if (this.alarms.includes(alarm)) {
-      alarm.removeAttribute("paused");
-      
-      botonstart.classList.remove('inactivo');
-        botonstart.classList.add('activo');
-      
-        botonpause.classList.remove('activo');
-       botonpause.classList.add('inactivo');
-    }
+start(alarm) {
+  if (this.alarms.includes(alarm)) {
+    const botonstart = alarm.querySelector('.start');
+    const botonpause = alarm.querySelector('.pause');
+
+    botonstart.classList.remove('inactivo');
+    botonstart.classList.add('activo');
+
+    botonpause.classList.remove('activo');
+    botonpause.classList.add('inactivo');
+
+    alarm.removeAttribute("paused");
   }
+}
 }
