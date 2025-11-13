@@ -112,7 +112,8 @@ height: 100%;
  background-color: var(--color-boton-seleccionado);
  --background-color: transparent;
   height: 40px;
-  width: 112px;
+  width: 118px;
+  
   border-radius: 20px;
   border: none;
   
@@ -140,13 +141,14 @@ x-alarm > .controls{
   justify-content: center;
   align-items: center;
   flex-direction: column-reverse; 
+ width: 250px;
   margin: auto;
-  padding-top: 70px;
-  padding-bottom: 70px;
-  margin-top:200px;
-  margin-bottom: 20px;
+  padding: 50px;
+  margin-bottom: 50px;
+  margin-top:100px;
+  border-radius: 20px;
   
-  background-color: bisque;
+  background-color: var(--color-barra-menu);
 }
 .time-alarm{
   display: flex;
@@ -155,21 +157,44 @@ x-alarm > .controls{
   margin-bottom: 30px;
   font-family: var(--tipografia);
   font-size: 40pt;
-  color: var(--color-boton-seleccionado);
+  color: var(--color-texto-icono);
   font-weight: 500;
 }
 
-
-.items{
-  display: flex;
-  flex-direction: column;
-  
+.items-alarm{
+    display: flex;
+justify-content: center;
+  overflow-y:scroll;
+  height: 360px;
   align-items: center;
+  margin: auto;
   
-   width: 100%;
-  height: auto;
+  flex-wrap: wrap;
+  
+  
+   width: 60%;
+}
+
+.iconos-alarm{
+ padding: 16px;
+  gap: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.iconos-alarm button{
+border: var(--color-texto-icono) 3px solid;
+  font-size: 24px;
+  color: var(--color-texto-icono);
+  padding: 12px;
+  border-radius: 50%;
  
 }
+.delete{
+  background-color: rgb(255, 119, 119);
+}
+
 
 .add{
    display: flex;
@@ -179,7 +204,7 @@ x-alarm > .controls{
    padding-left: 20px;
    padding-right: 20px;
   border: none;
-   height: 0px;
+   height: 1px;
    border-radius: 16px;
    gap: 4px;
    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.247);
@@ -192,6 +217,31 @@ x-alarm > .controls{
 
 }
 
+
+.alarms input[type="time"] {
+  font-family: var(--tipografia);
+  font-size: 15pt;
+  color: var(--color-texto-icono);
+  background: var(--color-boton-seleccionado); 
+  border: 2px solid var(--color-boton-seleccionado);
+  border-radius: 20px;
+  padding: 8px 12px;
+  width: 140px;
+  text-align: center;
+  margin-top: 16px;
+  
+  
+}
+.alarms{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+ margin: 20px;
+  background-color: var(--color-barra-menu);
+  
+}
 
 @media (max-width: 600px){
   .texto-icono{
@@ -234,8 +284,12 @@ ul{
 
 .activo{
 
-  color: green;
+  background-color: rgb(149, 240, 149);
+
 }
 .inactivo{
-  color: gray;
+  opacity: 0.6;
+ background-color: rgba(109, 109, 109, 0.247);
+ 
+
 }
