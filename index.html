@@ -87,7 +87,7 @@ add
          <section class="items items-alarm"></section>
         <template>
           <section class="alarms">
-            <input type="time" min="00:00" max="23:59" step="1" />
+            <input class="escribir-tiempo" type="time" min="00:00" max="23:59" step="1" />
             <section class="controls iconos-alarm">
               <button class="start material-icons activo">alarm_on</button>
               <button class="pause material-icons inactivo">alarm_off</button>
@@ -109,15 +109,18 @@ add
       </x-stopwatch>
     </section>
     <section id="timer">
+      <div class="contenedor-timer">
       <x-timer>
         <time datetime="PT0S">00:00:00.00</time>
         <section class="items">
-          <section class="timers">
-            <input type="time" min="00:00:00" max="23:59:59" value="00:03:00" />
-            <input type="time" min="00:00:00" max="23:59:59" value="00:01:00" />
+          <section class="timers gaptimer">
+            <input class="escribir-tiempo-timer " type="time" min="00:00:00" max="23:59:59" value="00:03:00" />
+            <input class="escribir-tiempo-timer" type="time" min="00:00:00" max="23:59:59" value="00:01:00" />
+           
           </section>
+          
         </section>
-        <section class="controls">
+        <section class="controls iconos-alarm">
           <button class="start material-icons">timer</button>
           <button class="pause material-icons">timer_off</button>
           <button class="restart material-icons">restart_alt</button>
@@ -125,6 +128,7 @@ add
           <button class="no-loop material-icons">sync_disabled</button>
         </section>
       </x-timer>
+      </div>
     </section>
   </main>
   <script src="./src/index.js"></script>
