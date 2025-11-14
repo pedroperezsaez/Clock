@@ -165,7 +165,7 @@ x-alarm > .controls{
     display: flex;
 justify-content: center;
   overflow-y:scroll;
-  height: 360px;
+  height: 380px;
   align-items: center;
   margin: auto;
   
@@ -188,7 +188,7 @@ justify-content: center;
   display: flex;
   background-color: var(--color-boton-seleccionado);
  padding: 5px;
---border: 10px solid black;
+
 outline: 5px solid var(--color-boton-seleccionado);
 outline-offset: -5px;
   border-radius: 30px;
