@@ -33,6 +33,12 @@ export default class Timer extends HTMLElement {
         inputs.forEach((input) => {
           input.classList.remove("current-interval");
         });
+        const botonstart = this.querySelector('.start');
+    const botonpause= this.querySelector('.pause');
+    botonstart.classList.remove('activo');
+    botonstart.classList.add('inactivo');
+    botonpause.classList.remove('inactivo');
+    botonpause.classList.add('activo-pause');
         this.dispatchEvent(new CustomEvent("stop", { bubbles: true }));
       }
 
@@ -98,19 +104,31 @@ export default class Timer extends HTMLElement {
   botonLoop.classList.add('activo');
   botonLoop.classList.remove('inactivo');
   botonNoLoop.classList.add('inactivo');
-  botonNoLoop.classList.remove('activo');
+  botonNoLoop.classList.remove('activo-pause');
     } else if (classList.contains("no-loop")) {
       this.loop = false;
        const botonLoop = this.querySelector('.loop');
   const botonNoLoop = this.querySelector('.no-loop');
   botonLoop.classList.add('inactivo');
   botonLoop.classList.remove('activo');
-  botonNoLoop.classList.add('activo');
+  botonNoLoop.classList.add('activo-pause');
   botonNoLoop.classList.remove('inactivo');
     } else if (classList.contains("pause")) {
       this.pause();
     } else if (classList.contains("restart")) {
       this.restart();
+       const botonstart = this.querySelector('.start');
+    const botonpause= this.querySelector('.pause');
+    botonstart.classList.remove('activo');
+    botonstart.classList.add('inactivo');
+    botonpause.classList.remove('inactivo');
+    botonpause.classList.add('activo-pause');
+       const botonLoop = this.querySelector('.loop');
+  const botonNoLoop = this.querySelector('.no-loop');
+  botonLoop.classList.add('inactivo');
+  botonLoop.classList.remove('activo');
+  botonNoLoop.classList.add('activo-pause');
+  botonNoLoop.classList.remove('inactivo');
     } else if (classList.contains("start")) {
       this.start();
     }
@@ -123,7 +141,7 @@ export default class Timer extends HTMLElement {
     botonstart.classList.remove('activo');
     botonstart.classList.add('inactivo');
     botonpause.classList.remove('inactivo');
-    botonpause.classList.add('activo');
+    botonpause.classList.add('activo-pause');
   }
 
   restart() {
@@ -141,7 +159,7 @@ export default class Timer extends HTMLElement {
      botonstart.classList.remove('inactivo');
   botonstart.classList.add('activo');
 
-  botonpause.classList.remove('activo');
+  botonpause.classList.remove('activo-pause');
   botonpause.classList.add('inactivo');
 
     const time = this.querySelector("time");

@@ -82,7 +82,7 @@ pause(alarm) {
     botonstart.classList.add('inactivo');
 
     botonpause.classList.remove('inactivo');
-    botonpause.classList.add('activo');
+    botonpause.classList.add('activo-pause');
 
     alarm.setAttribute("paused", "");
   }
@@ -96,7 +96,7 @@ start(alarm) {
     botonstart.classList.remove('inactivo');
     botonstart.classList.add('activo');
 
-    botonpause.classList.remove('activo');
+    botonpause.classList.remove('activo-pause');
     botonpause.classList.add('inactivo');
 
     alarm.removeAttribute("paused");

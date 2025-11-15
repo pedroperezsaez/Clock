@@ -17,7 +17,7 @@
       <li class="tamanyoil">
         <button class="botones " id="botonclock">
           <a href="#clock" class="texto-icono">
-            <span class="material-icons">home</span>
+            <span class="material-icons">access_time</span>
             <span class="texto home-reloj">Clock</span>
           </a>
         </button>
@@ -28,7 +28,7 @@
        <li class="tamanyoil">
         <button class="botones " id="botonalarm">
           <a href="#alarm" class="texto-icono">
-            <span class="material-icons">home</span>
+            <span class="material-icons">access_alarms</span>
             <span class="texto home-reloj">Alarm</span>
           </a>
         </button>
@@ -38,7 +38,7 @@
       <li class="tamanyoil">
         <button class="botones " id="botonstopwatch">
           <a href="#stopwatch" class="texto-icono">
-            <span class="material-icons">home</span>
+            <span class="material-icons">av_timer</span>
             <span class="texto home-reloj">Stopwatch</span>
           </a>
         </button>
@@ -50,7 +50,7 @@
        <li class="tamanyoil">
         <button class="botones " id="botontimer">
           <a href="#timer" class="texto-icono">
-            <span class="material-icons" >home</span>
+            <span class="material-icons-outlined" >timer</span>
             <span class="texto home-reloj">Timer</span>
           </a>
         </button>
@@ -70,13 +70,15 @@
       <x-alarm>
        
         
-        <section class="controls">
-         <button class="add addboton">
-  <span class="material-icons-outlined add-icon add">
+        <section class="controls iconos-alarm">
+          <div class="boton-individual">
+         <button class=" material-icons-outlined add activo-alarm">
+   
 add
-</span>
-  <span class="add">Añadir alarma</span>
+
+  
 </button>
+</div>
           
            <section id="clock">
  <x-clock>
@@ -85,17 +87,18 @@ add
       </x-clock>
     </section>
         </section>
-         <section class="items items-alarm"></section>
+        <div class="container-items-alarm"><section class="items items-alarm"></section></div>
+         
         <template>
           <section class="alarms">
             <input class="escribir-tiempo" type="time" min="00:00" max="23:59" step="1" />
-            <section class="controls iconos-alarm">
+            <section class="controls iconos-todos">
               <div class="icono-start-pause">
-                 <button class="start material-icons activo">alarm_on</button>
-              <button class="pause material-icons inactivo">alarm_off</button>
+                 <button class="start material-icons inactivo">alarm_on</button>
+              <button class="pause material-icons activo-pause">alarm_off</button>
               </div>
-             
-              <button class="delete material-icons">delete</button>
+             <div class="boton-individual"><button class="delete material-icons">delete</button></div>
+              
             </section>
           </section>
         </template>
@@ -105,10 +108,12 @@ add
     <section id="stopwatch">
       <x-stopwatch>
         <time datetime="PT0S">00:00:00.00</time>
-        <section class="controls">
-          <button class="start material-icons">timer</button>
-          <button class="pause material-icons">timer_off</button>
-          <button class="restart material-icons">restart_alt</button>
+        <section class="controls iconos-todos">
+          <div class="icono-start-pause"> 
+            <button class="start material-icons inactivo">timer</button>
+          <button class="pause material-icons activo-pause">timer_off</button></div>
+         <div class="boton-individual"><button class="restart material-icons delete">restart_alt</button></div>
+          
         </section>
       </x-stopwatch>
     </section>
@@ -124,14 +129,14 @@ add
           </section>
           
         </section>
-        <section class="controls iconos-alarm">
+        <section class="controls iconos-todos">
           <div class="icono-start-pause"><button class="start material-icons inactivo">timer</button>
-          <button class="pause material-icons activo">timer_off</button></div>
-          
-          <button class="restart material-icons delete">restart_alt</button>
+          <button class="pause material-icons activo-pause">timer_off</button></div>
+          <div class="boton-individual"> <button class="restart material-icons delete">restart_alt</button></div>
+         
           <div class="icono-start-pause">
             <button class="loop material-icons inactivo">loop</button>
-          <button class="no-loop material-icons activo">sync_disabled</button></div>
+          <button class="no-loop material-icons activo-pause">sync_disabled</button></div>
           
         </section>
       </x-timer>

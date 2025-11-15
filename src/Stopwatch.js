@@ -63,10 +63,29 @@ export default class Stopwatch extends HTMLElement {
     const { classList } = event.target;
     if (classList.contains("pause")) {
       this.pause();
+      const botonpause=this.querySelector('.pause');
+      const botonstart=this.querySelector('.start');
+      botonpause.classList.add('activo-pause');
+      botonpause.classList.remove('inactivo');
+      botonstart.classList.add('inactivo');
+      botonstart.classList.remove('activo');
     } else if (classList.contains("restart")) {
       this.restart();
+      this.pause();
+      const botonpause=this.querySelector('.pause');
+      const botonstart=this.querySelector('.start');
+      botonpause.classList.add('activo-pause');
+      botonpause.classList.remove('inactivo');
+      botonstart.classList.add('inactivo');
+      botonstart.classList.remove('activo');
     } else if (classList.contains("start")) {
       this.start();
+       const botonpause=this.querySelector('.pause');
+      const botonstart=this.querySelector('.start');
+       botonpause.classList.add('inactivo');
+      botonpause.classList.remove('activo-pause');
+      botonstart.classList.add('activo');
+      botonstart.classList.remove('inactivo');
     }
   }
 
