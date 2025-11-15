@@ -93,8 +93,20 @@ export default class Timer extends HTMLElement {
     const { classList } = event.target;
     if (classList.contains("loop")) {
       this.loop = true;
+      const botonLoop = this.querySelector('.loop');
+  const botonNoLoop = this.querySelector('.no-loop');
+  botonLoop.classList.add('activo');
+  botonLoop.classList.remove('inactivo');
+  botonNoLoop.classList.add('inactivo');
+  botonNoLoop.classList.remove('activo');
     } else if (classList.contains("no-loop")) {
       this.loop = false;
+       const botonLoop = this.querySelector('.loop');
+  const botonNoLoop = this.querySelector('.no-loop');
+  botonLoop.classList.add('inactivo');
+  botonLoop.classList.remove('activo');
+  botonNoLoop.classList.add('activo');
+  botonNoLoop.classList.remove('inactivo');
     } else if (classList.contains("pause")) {
       this.pause();
     } else if (classList.contains("restart")) {
@@ -106,6 +118,12 @@ export default class Timer extends HTMLElement {
 
   pause() {
     this.paused = true;
+    const botonstart = this.querySelector('.start');
+    const botonpause= this.querySelector('.pause');
+    botonstart.classList.remove('activo');
+    botonstart.classList.add('inactivo');
+    botonpause.classList.remove('inactivo');
+    botonpause.classList.add('activo');
   }
 
   restart() {
@@ -117,6 +135,15 @@ export default class Timer extends HTMLElement {
   }
 
   start() {
+    this.paused =false;
+    const botonstart = this.querySelector('.start');
+    const botonpause= this.querySelector('.pause');
+     botonstart.classList.remove('inactivo');
+  botonstart.classList.add('activo');
+
+  botonpause.classList.remove('activo');
+  botonpause.classList.add('inactivo');
+
     const time = this.querySelector("time");
     time.dateTime = time.dateTime || "PT0S";
     this.paused = false;
