@@ -1,151 +1,198 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Time</title>
+    <link
+      rel="stylesheet"
+      href="./src/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet" />
+       <link rel="icon" href="./src/access_time_filled_24dp_E3E3E3.svg" type="image/x-icon">
+  </head>
+ 
+  <body>
+    <audio id="alarma-audio" src="./src/alarm-clock-90867.mp3" preload="auto"></audio>
+     <audio id="timer-audio" src="./src/bell-ringing-ii-98323.mp3" preload="auto"></audio>
+    <nav>
+      <ul>
+        <li class="tamanyoil">
+          <button
+            class="botones"
+            id="botonclock">
+            <a
+              href="#clock"
+              class="texto-icono">
+              <span class="material-icons">access_time</span>
+              <span class="texto home-reloj">Clock</span>
+            </a>
+          </button>
+          <span class="texto home-reloj-600">Clock</span>
+        </li>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>Time</title>
-  <link rel="stylesheet" href="./src/styles.css" />
-   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
+        <li class="tamanyoil">
+          <button
+            class="botones"
+            id="botonalarm">
+            <a
+              href="#alarm"
+              class="texto-icono">
+              <span class="material-icons">access_alarms</span>
+              <span class="texto home-reloj">Alarm</span>
+            </a>
+          </button>
+          <span class="texto home-reloj-600">Alarm</span>
+        </li>
 
-<body>
-   
-  <nav>
-    <ul>
-      <li class="tamanyoil">
-        <button class="botones " id="botonclock">
-          <a href="#clock" class="texto-icono">
-            <span class="material-icons">access_time</span>
-            <span class="texto home-reloj">Clock</span>
-          </a>
-        </button>
-        <span class="texto home-reloj-600">Clock</span>
-      </li>
-      
+        <li class="tamanyoil">
+          <button
+            class="botones"
+            id="botonstopwatch">
+            <a
+              href="#stopwatch"
+              class="texto-icono">
+              <span class="material-icons">av_timer</span>
+              <span class="texto home-reloj">Stopwatch</span>
+            </a>
+          </button>
+          <span class="texto home-reloj-600">Stopwatch</span>
+        </li>
 
-       <li class="tamanyoil">
-        <button class="botones " id="botonalarm">
-          <a href="#alarm" class="texto-icono">
-            <span class="material-icons">access_alarms</span>
-            <span class="texto home-reloj">Alarm</span>
-          </a>
-        </button>
-        <span class="texto home-reloj-600">Alarm</span>
-      </li>
-      
-      <li class="tamanyoil">
-        <button class="botones " id="botonstopwatch">
-          <a href="#stopwatch" class="texto-icono">
-            <span class="material-icons">av_timer</span>
-            <span class="texto home-reloj">Stopwatch</span>
-          </a>
-        </button>
-        <span class="texto home-reloj-600">Stopwatch</span>
-      </li>
-      
+        <li class="tamanyoil">
+          <button
+            class="botones"
+            id="botontimer">
+            <a
+              href="#timer"
+              class="texto-icono">
+              <span class="material-icons-outlined">timer</span>
+              <span class="texto home-reloj">Timer</span>
+            </a>
+          </button>
+          <span class="texto home-reloj-600">Timer</span>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <section id="clock">
+        <x-clock>
+          <time class="time">00:00:00</time>
+        </x-clock>
+      </section>
+      <section id="alarm">
+        <x-alarm>
+          <section class="controls iconos-alarm">
+            <div class="boton-individual">
+              <button class="material-icons-outlined add activo-alarm">
+                add
+              </button>
+            </div>
 
-
-       <li class="tamanyoil">
-        <button class="botones " id="botontimer">
-          <a href="#timer" class="texto-icono">
-            <span class="material-icons-outlined" >timer</span>
-            <span class="texto home-reloj">Timer</span>
-          </a>
-        </button>
-        <span class="texto home-reloj-600">Timer</span>
-      
-      </li>
-    </ul>
-  </nav>
-  <main>
-    <section id="clock">
-      <x-clock>
-        <time class="time">00:00:00</time>
-          
-      </x-clock>
-    </section>
-    <section id="alarm">
-      <x-alarm>
-       
-        
-        <section class="controls iconos-alarm">
-          <div class="boton-individual">
-         <button class=" material-icons-outlined add activo-alarm">
-   
-add
-
-  
-</button>
-</div>
-          
-           <section id="clock">
- <x-clock>
-        <time class="time-alarm">00:00:00</time>
-          
-      </x-clock>
-    </section>
-        </section>
-        <div class="container-items-alarm"><section class="items items-alarm"></section></div>
-         
-        <template>
-          <section class="alarms">
-            <input class="escribir-tiempo" type="time" min="00:00" max="23:59" step="1" />
-            <section class="controls iconos-todos">
-              <div class="icono-start-pause">
-                 <button class="start material-icons inactivo">alarm_on</button>
-              <button class="pause material-icons activo-pause">alarm_off</button>
-              </div>
-             <div class="boton-individual"><button class="delete material-icons">delete</button></div>
-              
+            <section id="clock">
+              <x-clock>
+                <time class="time-alarm">00:00:00</time>
+              </x-clock>
             </section>
           </section>
-        </template>
-       
-      </x-alarm>
-    </section>
-    <section id="stopwatch">
-      <x-stopwatch>
-        <time datetime="PT0S">00:00:00.00</time>
-        <section class="controls iconos-todos">
-          <div class="icono-start-pause"> 
-            <button class="start material-icons inactivo">timer</button>
-          <button class="pause material-icons activo-pause">timer_off</button></div>
-         <div class="boton-individual"><button class="restart material-icons delete">restart_alt</button></div>
-          
-        </section>
-      </x-stopwatch>
-    </section>
-    <section id="timer">
-      <div class="contenedor-timer">
-      <x-timer>
-        <time datetime="PT0S">00:00:00.00</time>
-        <section class="items">
-          <section class="timers gaptimer">
-            <input class="escribir-tiempo-timer " type="time" min="00:00:00" max="23:59:59" value="00:03:00" />
-            <input class="escribir-tiempo-timer" type="time" min="00:00:00" max="23:59:59" value="00:01:00" />
-           
-          </section>
-          
-        </section>
-        <section class="controls iconos-todos">
-          <div class="icono-start-pause"><button class="start material-icons inactivo">timer</button>
-          <button class="pause material-icons activo-pause">timer_off</button></div>
-          <div class="boton-individual"> <button class="restart material-icons delete">restart_alt</button></div>
-         
-          <div class="icono-start-pause">
-            <button class="loop material-icons inactivo">loop</button>
-          <button class="no-loop material-icons activo-pause">sync_disabled</button></div>
-          
-        </section>
-      </x-timer>
-      </div>
-    </section>
-  </main>
-  <script src="./src/index.js"></script>
-  <script type="module" src="./src/app.js"></script>
-  
-</body>
+          <div class="container-items-alarm">
+            <section class="items items-alarm"></section>
+          </div>
 
+          <template>
+            <section class="alarms">
+              <input
+                class="escribir-tiempo"
+                type="time"
+                min="00:00"
+                max="23:59"
+                step="1" />
+              <section class="controls iconos-todos">
+                <div class="icono-start-pause">
+                  <button class="start material-icons inactivo audio-alarm-activo" >
+                    alarm_on
+                  </button>
+                  <button class="pause material-icons activo-pause audio-alarm-inactivo" >
+                    alarm_off
+                  </button>
+                </div>
+                <div class="boton-individual">
+                  <button class="delete material-icons">delete</button>
+                </div>
+              </section>
+            </section>
+          </template>
+        </x-alarm>
+      </section>
+      <section id="stopwatch">
+        <x-stopwatch>
+          <time datetime="PT0S">00:00:00.00</time>
+          <section class="controls iconos-todos">
+            <div class="icono-start-pause">
+              <button class="start material-icons inactivo " >timer</button>
+              <button class="pause material-icons activo-pause" >
+                timer_off
+              </button>
+            </div>
+            <div class="boton-individual">
+              <button class="restart material-icons delete">restart_alt</button>
+            </div>
+          </section>
+        </x-stopwatch>
+      </section>
+      <section id="timer">
+        <div class="contenedor-timer">
+          <x-timer>
+            <time datetime="PT0S">00:00:00.00</time>
+            <section class="items">
+              <section class="timers gaptimer">
+                <input
+                  class="escribir-tiempo-timer"
+                  type="time"
+                  min="00:00:00"
+                  max="23:59:59"
+                  value="00:03:00" />
+                <input
+                  class="escribir-tiempo-timer"
+                  type="time"
+                  min="00:00:00"
+                  max="23:59:59"
+                  value="00:01:00" />
+              </section>
+            </section>
+            <section class="controls iconos-todos">
+              <div class="icono-start-pause">
+                <button class="start material-icons inactivo">timer</button>
+                <button class="pause material-icons activo-pause">
+                  timer_off
+                </button>
+              </div>
+              <div class="boton-individual">
+                <button class="restart material-icons delete">
+                  restart_alt
+                </button>
+              </div>
+
+              <div class="icono-start-pause">
+                <button class="loop material-icons inactivo">loop</button>
+                <button class="no-loop material-icons activo-pause">
+                  sync_disabled
+                </button>
+              </div>
+            </section>
+          </x-timer>
+        </div>
+      </section>
+    </main>
+    <script src="./src/index.js"></script>
+    <script
+      type="module"
+      src="./src/app.js"></script>
+  </body>
 </html>

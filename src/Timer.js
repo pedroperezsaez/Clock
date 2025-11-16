@@ -40,6 +40,11 @@ export default class Timer extends HTMLElement {
     botonpause.classList.remove('inactivo');
     botonpause.classList.add('activo-pause');
         this.dispatchEvent(new CustomEvent("stop", { bubbles: true }));
+        const audio = document.getElementById("timer-audio");
+
+    
+    audio.play();
+
       }
 
       time.dateTime = `PT${ms / 1000}S`;

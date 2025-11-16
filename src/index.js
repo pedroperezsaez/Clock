@@ -1,63 +1,45 @@
-
-
 const botonClock=document.querySelector('#botonclock');
 const botonAlarm=document.querySelector('#botonalarm');
 const botonStopWatch=document.querySelector('#botonstopwatch');
 const botonTimer=document.querySelector('#botontimer');
-botonSeleccionado()
 
-function botonSeleccionado(){
-    botonClock.addEventListener('click', function(){
-    botonClock.classList.add('boton-seleccionado'); 
-    botonAlarm.classList.remove('boton-seleccionado');    
-    botonStopWatch.classList.remove('boton-seleccionado');      
+window.addEventListener("hashchange", btonSeleccionado);
+btonSeleccionado();
+function btonSeleccionado(){
+ botonClock.classList.remove('boton-seleccionado');
+    botonAlarm.classList.remove('boton-seleccionado');
+    botonStopWatch.classList.remove('boton-seleccionado');
     botonTimer.classList.remove('boton-seleccionado');
-   });
-
-    botonAlarm.addEventListener('click', function(){
-    botonAlarm.classList.add('boton-seleccionado'); 
-
-    botonClock.classList.remove('boton-seleccionado');
-
-     botonStopWatch.classList.remove('boton-seleccionado');
-      
-
-      botonTimer.classList.remove('boton-seleccionado');
-
-
-   });
-
-  
-   botonStopWatch.addEventListener('click', function(){
-    botonStopWatch.classList.add('boton-seleccionado');
-    
-
-    botonAlarm.classList.remove('boton-seleccionado');
-
-     botonClock.classList.remove('boton-seleccionado');
-
-      botonTimer.classList.remove('boton-seleccionado');
-
-
-   });
-
-
-      botonTimer.addEventListener('click', function(){
-    botonTimer.classList.add('boton-seleccionado');
-    
-
-    botonAlarm.classList.remove('boton-seleccionado');
-
-     botonStopWatch.classList.remove('boton-seleccionado');
-      
-
-      botonClock.classList.remove('boton-seleccionado');
-    
-
-
-   });
-   
-
+  const hash = location.hash;
+  if (!location.hash) {
+  location.hash = '#clock';
 };
+
+  if (hash === "#clock") {
+   botonClock.classList.add('boton-seleccionado');
+  } else if (hash === '#alarm') {
+    botonAlarm.classList.add('boton-seleccionado');
+  } else if (hash === '#stopwatch') {
+    botonStopWatch.classList.add('boton-seleccionado');
+  } else if (hash === '#timer') {
+    botonTimer.classList.add('boton-seleccionado');
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/*if (!location.hash) {
+  location.hash = "#clock";
+ const botonClock=document.querySelector('#botonclock');
+ botonClock.classList.add('boton-seleccionado');
+}*/
+
 
 

@@ -3,6 +3,7 @@ export default class Alarm extends HTMLElement {
   #intervalId = 0;
 
   constructor() {
+    
     super();
     this.addEventListener("click", this);
     this.duration = 60 * 1000;
@@ -12,13 +13,24 @@ export default class Alarm extends HTMLElement {
         const date =
           new Date(value).getTime() ||
           new Date(`${new Date().toLocaleDateString()} ${value}`).getTime();
+          if(isNaN(date)){
+            console.log("mal");
+          }
         if (date) {
           const delta = Date.now() - date;
           if (delta > 0 && delta < new Date(this.duration)) {
+            console.log("hola")
             alarm.setAttribute("ringing", "");
             this.dispatchEvent(
-              new CustomEvent("ring", { bubbles: true, detail: alarm })
+              new CustomEvent("ring", { bubbles: true, detail: alarm }
+              )
+              
             );
+             const audio = document.getElementById("alarma-audio");
+ 
+    audio.play();
+  
+
             return;
           }
         }
@@ -27,6 +39,7 @@ export default class Alarm extends HTMLElement {
       });
     };
   }
+  
 
   get alarms() {
     return [...this.querySelector(".items").children];
