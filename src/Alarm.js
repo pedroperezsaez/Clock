@@ -19,16 +19,16 @@ export default class Alarm extends HTMLElement {
         if (date) {
           const delta = Date.now() - date;
           if (delta > 0 && delta < new Date(this.duration)) {
-            console.log("hola")
+           
             alarm.setAttribute("ringing", "");
             this.dispatchEvent(
               new CustomEvent("ring", { bubbles: true, detail: alarm }
               )
               
             );
-             const audio = document.getElementById("alarma-audio");
+             
  
-    audio.play();
+ 
   
 
             return;
@@ -116,3 +116,32 @@ start(alarm) {
   }
 }
 }
+const sonido = document.getElementById('alarma-audio');
+setInterval(() => { 
+  const alarmas = document.querySelectorAll('#alarm x-alarm .items .alarms input[type=time]');
+  alarmas.forEach((alarma) => {
+  const alarmTime = alarma.value; 
+  const tiempoActual = new Date();
+  const tiempo = tiempoActual.toTimeString().split(' ')[0];
+ const botonPause = alarma.parentElement.querySelector('.audio-alarm-inactivo');
+  const botonStart = alarma.parentElement.querySelector('.audio-alarm-activo');
+   const botonDelete = alarma.parentElement.querySelector('.audio-delete');
+  if (alarmTime === tiempo && botonStart.classList.contains('activo')) {
+
+    botonPause.addEventListener('click',()=>{
+      sonido.pause();
+      sonido.currentTime=0;
+    });
+     botonDelete.addEventListener('click',()=>{
+      sonido.pause();
+      sonido.currentTime=0;
+    })
+    sonido.play();
+    setTimeout(() => {
+      sonido.pause();
+      sonido.currentTime = 0;
+    }, 10000);
+  }
+});
+
+}, 1000);
